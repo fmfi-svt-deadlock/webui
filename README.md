@@ -15,12 +15,13 @@ TL;DR for Deployment
 --------------------
 
 1. `npm install`
-2. set `PORT` and `API_URL` env vars; `node server`
+2. set `PORT` and `API_URL` env vars (to something like `8000` and `http://localhost:5000/`)
+3. `node server`
 
 Development Quick Start
 -----------------------
 
-Note: This is the web front-end only. The API is [server/deadapi](https://github.com/fmfi-svt-deadlock/server/tree/master/deadapi).
+Note: This is the web front-end only. The API is [server/deadapi](https://github.com/fmfi-svt-deadlock/server/tree/devel/deadapi).
 
 - requires [node.js](https://nodejs.org/) and npm
 - install dependencies: `npm install`
