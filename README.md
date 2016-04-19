@@ -11,6 +11,12 @@ Using...
 - [React](https://facebook.github.io/react)
 - [webpack](http://webpack.github.io/)
 
+TL;DR for Deployment
+--------------------
+
+1. `npm install`
+2. set `PORT` and `API_URL` env vars; `node server`
+
 Development Quick Start
 -----------------------
 
