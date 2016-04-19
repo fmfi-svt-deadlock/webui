@@ -1,0 +1,9 @@
+# Build
+bundle.js
+bundle.js.map
+
+# Dependencies
+node_modules
+
+# local configuration in .env
+.env

@@ -1,0 +1,36 @@
+{
+  "name": "deadlock-webui",
+  "version": "0.0.1",
+  "url": "https://github.com/fmfi-svt-deadlock/webui/",
+  "description": "The Deadlock web interface for rule management and status monitoring.",
+  "dependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "css-loader": "~0.23.1",
+    "es6-promise": "~3.1.2",
+    "express": "^4.13.3",
+    "node-sass": "~3.4.2",
+    "react": "~15.0.1",
+    "react-dom": "^15.0.1",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "~3.2.0",
+    "style-loader": "~0.13.0",
+    "webpack": "~1.13.0",
+    "webpack-zepto": "0.0.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "~1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fmfi-svt-deadlock/webui.git"
+  },
+  "author": "Kamila Součková <kamila@ksp.sk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fmfi-svt-deadlock/webui/issues"
+  }
+}
