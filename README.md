@@ -16,6 +16,7 @@ TL;DR for Deployment
 
 1. `npm install`
 2. set `PORT` and `API_URL` env vars (to something like `8000` and `http://localhost:5000/`)
+2. `npm build`
 3. `node server`
 
 Development Quick Start

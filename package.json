@@ -31,6 +31,10 @@
     "type": "git",
     "url": "git://github.com/fmfi-svt-deadlock/webui.git"
   },
+  "scripts": {
+    "start": "$(npm bin)/webpack-dev-server --inline --hot --content-base public/ --history-api-fallback",
+    "build": "$(npm bin)/webpack --colors --progress"
+  },
   "author": "Kamila Součková <kamila@ksp.sk>",
   "license": "MIT",
   "bugs": {
