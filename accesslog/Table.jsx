@@ -34,13 +34,17 @@ export class Table extends React.Component {
     }
 
     componentWillMount() {
-        if (this.props.onShow) this.props.onShow()
+        if (this.props.onMount) this.props.onMount()
+    }
+    componentWillUnmount() {
+        if (this.props.onUnmount) this.props.onUnmount()
     }
 }
 Table.propTypes = {
     records:     PropTypes.arrayOf(PropTypes.object),
     is_fetching: PropTypes.bool.isRequired,
-    onShow:      PropTypes.func,
+    onMount:     PropTypes.func,
+    onUnmount:   PropTypes.func,
 }
 
 export default Table

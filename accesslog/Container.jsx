@@ -1,10 +1,13 @@
 import { connect } from 'react-redux'
 
-import { update_data } from './actions.js'
+import { event_to_action } from '../utils/sse.js'
+import { myfetch } from '../utils/utils.js'
+
+import { REQUEST, RECEIVE } from './actions.js'
 import Table from './Table.jsx'
 
-// TODO the event source stuff should be centralized and event thingy should dispatch actions and
-// stuff -- shouldn't be each object's responsibility
+// toto je action, lebo thunkMiddleware
+const update_data = (dispatch) => myfetch('/accesslog')(dispatch, REQUEST(), RECEIVE)
 
 const mapStateToProps = state => ({
     is_fetching: state.accesslog.is_fetching,
@@ -12,7 +15,13 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    onShow: () => dispatch(update_data),
+    onMount: () => {
+        event_to_action('accesslog_update', update_data)
+        dispatch(update_data)
+    },
+    onUnmount: () => {
+        event_to_action('accesslog_update', null)
+    },
 })
 
 export const Container = connect(mapStateToProps, mapDispatchToProps)(Table)

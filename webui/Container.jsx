@@ -23,4 +23,8 @@ Container.propTypes = {
     children: React.PropTypes.node,
 }
 
+export const Default = (props) => (
+    <div>TODO help / intro / whatever</div>
+)
+
 export default Container

@@ -8,7 +8,7 @@ import thunkMiddleware from 'redux-thunk'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import Container from './webui/Container.jsx'
+import { Container, Default } from './webui/Container.jsx'
 import routes from './webui/routes.js'
 import { init as sse_init } from './utils/sse.js'
 import accesslog from './accesslog/reducers.js'
@@ -33,6 +33,7 @@ ReactDOM.render((
         <Router history={syncHistoryWithStore(browserHistory, store)}>
             <Route component={Container}>
                 {routes.map(({path, component}, i) => <Route key={i} path={path} component={component}/>)}
+                <Route path='*' component={Default} />
             </Route>
         </Router>
     </Provider>
