@@ -3,10 +3,10 @@ path = require('path')
 
 module.exports = {
     devtool: "source-map",
-    entry: "./main.jsx",
+    entry: './main.jsx',
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        path: path.resolve(__dirname, 'public')
     },
     resolve: {
         extensions: ["", ".jsx", ".js"],
