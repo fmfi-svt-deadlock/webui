@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 
-import { event_to_action } from '../utils/sse.js'
-import { myfetch } from '../utils/utils.js'
+import { event_to_action } from '../common/sse.js'
+import { myfetch } from '../common/utils.js'
 
 import { REQUEST, RECEIVE } from './actions.js'
-import Table from './Table.jsx'
+import { Table } from './Table.jsx'
 
 // toto je action, lebo thunkMiddleware
 const update_data = (dispatch) => myfetch('/accesslog')(dispatch, REQUEST(), RECEIVE)
