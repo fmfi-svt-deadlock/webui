@@ -24,7 +24,7 @@ Container.propTypes = {
 }
 
 export const Default = (props) => (
-    <div>TODO help / intro / whatever</div>
+    <div className='not-implemented'>TODO help / intro / whatever</div>
 )
 
 export default Container
