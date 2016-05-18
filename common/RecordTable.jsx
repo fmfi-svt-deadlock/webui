@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import {FormattedMessage} from 'react-intl'
 
 export class RecordTable extends React.Component {
     render() {
@@ -39,4 +40,5 @@ export const TableOf = ({head, render_record}) => (function TableOf(props) {
     return <RecordTable head={head} render_record={render_record} {...props} />
 })
 
-export default TableOf
+export const TranslaTable = ({head, render_record}) =>
+    TableOf({head: head.map(id => <FormattedMessage id={id} />), render_record: render_record})

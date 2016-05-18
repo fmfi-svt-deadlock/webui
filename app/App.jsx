@@ -1,6 +1,6 @@
 import React from 'react'
 import {combineReducers, applyMiddleware} from 'redux'
-import {Provider} from 'react-redux'
+import {connect, Provider} from 'react-redux'
 import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import {Router, Route, browserHistory} from 'react-router'
@@ -11,30 +11,24 @@ import sk from 'react-intl/locale-data/sk'
 
 import { init as sse_init } from '../common/sse.js'
 
-import { accesslog as accesslog_reducer } from '../accesslog/reducers.js'
-import { status    as status_reducer    } from '../status/reducers.js'
+import accesslog_reducer from '../accesslog/reducers.js'
+import status_reducer    from '../status/reducers.js'
+import settings_reducer  from '../settings/reducers.js'
 
-import { Container as AccessLog }   from '../accesslog/Container.jsx'
-import { Container as AccessPoint } from '../accesspoint/Container.jsx'
-import { Container as Rules }       from '../rules/Container.jsx'
-import { Container as Status }      from '../status/Container.jsx'
-
+import routes from './routes.js'
 import { Container, Default } from './Container.jsx'
+
+import messages from '../translations/messages.yml'
 
 export const init = (store) => {
     addLocaleData([...en, ...sk])
     sse_init(store.dispatch)
 }
-export const routes = [
-    { name: 'Access Rules',  path: '/rules',       component: Rules },
-    { name: 'Access Points', path: '/accesspoint', component: AccessPoint },
-    { name: 'System Status', path: '/status',      component: Status },
-    { name: 'Access Log',    path: '/accesslog',   component: AccessLog },
-]
 
 export const reducer = combineReducers({
     accesslog: accesslog_reducer,
     status:    status_reducer,
+    settings:  settings_reducer,
     routing:   routerReducer,
 })
 export const middleware = applyMiddleware(
@@ -56,8 +50,19 @@ AppInner.propTypes = {
     store: React.PropTypes.object,
 }
 
-export const App = (props) => (
-    <IntlProvider locale={navigator.language}>
+const AppComponent = props => (
+    <IntlProvider locale={props.language}
+                  messages={props.messages}>
         <AppInner {...props} />
     </IntlProvider>
 )
+AppComponent.propTypes = {
+    store: React.PropTypes.object.isRequired,
+    language: React.PropTypes.string.isRequired,
+    messages: React.PropTypes.object.isRequired,
+}
+
+export const App = connect(state => ({
+    language: state.settings.language,
+    messages: messages[state.settings.language],
+}))(AppComponent)

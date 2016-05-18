@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
-
-import TableOf from '../common/RecordTable.jsx'
 import {injectIntl, FormattedRelative} from 'react-intl';
+
+import {TranslaTable} from '../common/RecordTable.jsx'
 
 const time_fmt = {
     year:   'numeric',
@@ -18,32 +18,39 @@ const TimeField = injectIntl(({value, intl}) => (
     </span>
 ))
 
-export const StatusRecord = ({data}) => (
-    <tr>
-        <td>{data.name}</td>
-        <td>{data.ip}</td>
-        <td>{data.type}</td>
-        <td>{data.controller}</td>
-        <td>{data.last_seen ? <TimeField value={data.last_seen} /> : ''}</td>
-        <td>{data.db_version}</td>
-        <td>{data.fw_version}</td>
-    </tr>
-)
+export const StatusRecord = ({data}) => {
+    let time_drift = data.last_seen ?
+        new Date(data.last_seen).getTime() - new Date(data.controller_time).getTime() :
+        ''
+    return (
+        <tr>
+            <td><span title={data.id}>{data.name}</span></td>
+            <td><span title={data.type_id}>{data.type}</span></td>
+            <td>{data.controller}</td>
+            <td>{data.last_seen ? <TimeField value={data.last_seen} /> : ''}</td>
+            <td>{data.db_version}</td>
+            <td>{data.fw_version}</td>
+            <td className='col-numeric'>{data.last_seen ? time_drift + 'ms': ''}</td>
+        </tr>
+    )
+}
 StatusRecord.propTypes = {
     data: React.PropTypes.shape({
-        name:       PropTypes.string,
-        ip:         PropTypes.string,
-        type:       PropTypes.string,
-        controller: PropTypes.string,
-        last_seen:  PropTypes.any,
-        db_version: PropTypes.number,
-        fw_version: PropTypes.number,
+        id:              PropTypes.number.isRequired,
+        name:            PropTypes.string,
+        type:            PropTypes.string,
+        type_id:         PropTypes.number,
+        controller:      PropTypes.number,
+        last_seen:       PropTypes.any,
+        controller_time: PropTypes.any,
+        db_version:      PropTypes.number,
+        fw_version:      PropTypes.number,
     }).isRequired,
 }
 
-export const Table = TableOf({
-    head: ['AP name', 'IP', 'type', 'controller', 'last seen', 'DB version', 'FW version'],
-    render_record: record => <StatusRecord key={record.ip} data={record} />,
+export const Table = TranslaTable({
+    head: ['table.poa', 'table.poa_type', 'table.controller', 'table.last_seen', 'table.db_version', 'table.fw_version', 'table.time_drift'],
+    render_record: record => <StatusRecord key={record.id} data={record} />,
 })
 
 export default Table

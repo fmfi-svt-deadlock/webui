@@ -1,0 +1,45 @@
+sk:
+  app.title: Administrácia Deadlock-u
+
+  route.rules: Prístupové pravidlá
+  route.accesspoint: Prístupové body
+  route.status: Stav systému
+  route.accesslog: Záznamy o prístupe
+
+  settings.label.lang: Jazyk
+
+  table.poa: Prístupový bod
+  table.poa_type: Typ
+  table.controller: Controller
+  table.last_seen: Posledný kontakt
+  table.db_version: verzia DB
+  table.fw_version: verzia FW
+  table.time: Čas
+  table.card_id: ID karty
+  table.allowed: Povolené?
+  table.time_drift: Chyba hodín
+  action.new_controller: Nový controller
+  action.new_poa: Nový prístupový bod
+
+en:
+  app.title: Deadlock Management Console
+
+  route.rules: Access Rules
+  route.accesspoint: Access Points
+  route.status: System Status
+  route.accesslog: Access Log
+
+  settings.label.lang: Language
+
+  table.poa: Point of access
+  table.poa_type: PoA type
+  table.controller: Controller
+  table.last_seen: Last seen
+  table.db_version: DB version
+  table.fw_version: FW version
+  table.time: Time
+  table.card_id: Card ID
+  table.allowed: Allowed?
+  table.time_drift: Time drift
+  action.new_controller: New controller
+  action.new_poa: New point of access
