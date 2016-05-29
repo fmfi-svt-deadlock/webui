@@ -1,4 +1,4 @@
-`accesspoint` -- access points and controllers
-==============================================
+`accesspoint` -- PoAs and controllers
+=====================================
 
 TODO

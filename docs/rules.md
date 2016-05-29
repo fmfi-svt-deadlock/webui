@@ -1,4 +1,4 @@
-`rules`: access rules
-=====================
+`rules` -- access rules
+=======================
 
 TODO
