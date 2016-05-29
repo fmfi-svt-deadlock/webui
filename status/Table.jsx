@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import {injectIntl, FormattedRelative} from 'react-intl';
+import {injectIntl, FormattedRelative} from 'react-intl'
 
 import {TranslaTable} from '../common/RecordTable.jsx'
 

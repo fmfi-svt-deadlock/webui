@@ -2,9 +2,9 @@ Introduction
 ============
 
 Deadlock WebUI is a single-page web application written in [React](https://facebook.github.io/react/).
-It connects to `the Deadlock server's API <https://deadlock.readthedocs.io/en/latest/server/deadapi/>`_.
+It connects to [the Deadlock server's API](https://deadlock.readthedocs.io/en/latest/server/deadapi/).
 
-TODO stuff.
+You should read [how this is built](build), and [our favorite flavors of all the weird web whazzits](using).
 
 WebUI is implemented as a set of relatively independent modules providing the various functionality, plus some shared library-like functionality and some glue to hold it all together.
 

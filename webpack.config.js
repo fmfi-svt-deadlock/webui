@@ -22,7 +22,7 @@ module.exports = {
             {test: /\.sass$/, loaders: ["style", "css?sourceMap", "sass?indentedSyntax,sourceMap"]},
             {test: /\.(gif|png|jpg)$/, loader: 'url?limit=50000&name=resources/images/[name].[ext]&mimeType=image/[ext]'},
             {test: /\.svg$/, loader: 'svg-url-loader'},
-            {test: /\.yml$/, loaders: ['json', 'yaml']}
+            {test: /\.ya?ml$/, loaders: ['json', 'yaml']}
 
         ]
     }

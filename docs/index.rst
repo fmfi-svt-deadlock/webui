@@ -18,6 +18,8 @@ Table of contents
    :maxdepth: 2
 
    intro
+   using
+   build
    i18n
    app
    common
