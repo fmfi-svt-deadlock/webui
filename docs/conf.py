@@ -7,6 +7,7 @@
 # containing dir.
 
 from recommonmark.parser import CommonMarkParser
+import sphinx_rtd_theme
 
 # -- General configuration ------------------------------------------------
 
@@ -52,6 +53,9 @@ release = '0.1'
 exclude_patterns = ['_build']
 
 # -- Options for HTML output ----------------------------------------------
+
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
