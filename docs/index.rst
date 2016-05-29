@@ -10,24 +10,33 @@ The WebUI is a web application that connects to the `Deadlock <https://deadlock.
 
 The UI is self-documenting. Therefore only developer documentation is available here.
 
-
-Table of contents
------------------
+Contents:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Start here
 
    intro
    using
    build
    i18n
-   app
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules
+
    common
    accesslog
    accesspoint
    rules
    status
    settings
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Gluing it all together
+
+   app
 
 
 .. Indices and tables
