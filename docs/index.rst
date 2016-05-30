@@ -23,9 +23,14 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Modules
+   :caption: Common utilities
 
    common
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Modules
+
    accesslog
    accesspoint
    rules
