@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import {FormattedMessage} from 'react-intl'
 
 export class RecordTable extends React.Component {
@@ -28,17 +28,17 @@ export class RecordTable extends React.Component {
     }
 }
 RecordTable.propTypes = {
-    head:          PropTypes.arrayOf(PropTypes.node),
-    render_record: PropTypes.func.isRequired,
-    records:       PropTypes.arrayOf(PropTypes.object),
-    is_fetching:   PropTypes.bool.isRequired,
-    onMount:       PropTypes.func,
-    onUnmount:     PropTypes.func,
+    head:          React.PropTypes.arrayOf(React.PropTypes.node),
+    render_record: React.PropTypes.func.isRequired,
+    records:       React.PropTypes.arrayOf(React.PropTypes.object),
+    is_fetching:   React.PropTypes.bool.isRequired,
+    onMount:       React.PropTypes.func,
+    onUnmount:     React.PropTypes.func,
 }
 
 export const TableOf = ({head, render_record}) => (function TableOf(props) {
-    return <RecordTable head={head} render_record={render_record} {...props} />
+    return <RecordTable head={head} render_record={render_record} {...props}/>
 })
 
 export const TranslaTable = ({head, render_record}) =>
-    TableOf({head: head.map(id => <FormattedMessage id={id} />), render_record: render_record})
+    TableOf({head: head.map(id => <FormattedMessage id={id}/>), render_record: render_record})
